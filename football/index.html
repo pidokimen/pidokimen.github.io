@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="icon" href="slike/icon.png">
+        <title>Free Sport Streams</title>
+		<style> img:hover{cursor:pointer;}</style>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+
+    <body style="background-color: rgb(141, 253, 216); background-image: url(https://pngimg.com/uploads/fifa/fifa_PNG8.png);">
+        <div class="container p-3 my-3" style="background-color: rgba(139, 228, 186, 0.808);">
+            <img onclick="myFunction('https://sportzonline.co/channels/hd/hd6.php')" src="slike/laliga.png"  style="width:70px;height:70px;margin-bottom: 5px;">
+            <img onclick="myFunction('https://castfree.me/embed.php?player=desktop&live=skysfott')" src="slike/sky.png"  style="width:100px;height:60px;padding-right:5px;margin-bottom: 5px;">
+            <img onclick="myFunction('https://poscitech.click/tv/ch61.php')" src="slike/beinEn.png"  style="width:80px;height:80px;padding-right:5px;margin-bottom: 5px;">
+            <img onclick="myFunction('http://mx.freestreams-live1.com/beinusa-s1/')" src="slike/beinUsa.jpg"  style="width:70px;height:70px;padding-right:5px;margin-bottom: 5px;">
+			<img onclick="myFunction('https://poscitech.click/player/ch91.php')" src="slike/beinAr.png"  style="width:80px;height:80px;padding-right:5px;margin-bottom: 5px;">
+			<img onclick="myFunction('https://casadelfutbol.net/capodeportes/stream/1.php')" src="slike/beinFra.webp"  style="width:60px;height:60px;padding-right:5px;margin-bottom: 5px;">
+			<img onclick="myFunction('http://wikisport.click/fsl/sporttv01.php')" src="slike/sportPor.jpg"  style="width:100px;height:70px;padding-right:5px;margin-bottom: 5px;">
+            <img onclick="myFunction('https://poscitech.click/player/ch14.php')" src="slike/cbs.png"  style="width:60px;height:60px;padding-right:5px;margin-bottom: 5px;">
+            <img onclick="myFunction('https://poscitech.click/player/ch31.php')" src="slike/bt.svg"  style="width:100px;height:60px;padding-right:5px;margin-bottom: 5px;">
+            <img onclick="myFunction('http://wikisport.click/play/epl1.php')" src="slike/espn.png"  style="width:100px;height:60px;padding-right:5px;margin-bottom: 5px;">
+            <img onclick="myFunction('https://poscitech.click/player/ch101.php')" src="slike/sk1.svg"  style="width:100px;height:60px;padding-right:5px;margin-bottom: 5px;">
+			<img onclick="myFunction('https://poscitech.click/player/ch102.php')" src="slike/sk2.jpg"  style="width:100px;height:60px;padding-right:5px;margin-bottom: 5px;">
+			<img onclick="myFunction('https://poscitech.click/player/ch103.php')" src="slike/sk3.svg"  style="width:100px;height:60px;padding-right:5px;margin-bottom: 5px;">
+			<img onclick="myFunction('https://poscitech.click/player/ch134.php')" src="slike/a1.png"  style="width:100px;height:60px;padding-right:5px;margin-bottom: 5px;">
+			<img onclick="myFunction('https://cdn.sportcast.life/nginx.php?id=135')" src="slike/a2.png"  style="width:100px;height:60px;padding-right:5px;margin-bottom: 5px;">
+            <img onclick="myFunction('https://cdn.sportcast.life/nginx.php?id=139')" src="slike/a3.png"  style="width:100px;height:60px;padding-right:5px;margin-bottom: 5px;">
+            <img onclick="myFunction('https://poscitech.click/tv/ch18.php')" src="slike/a4.png"  style="width:100px;height:60px;padding-right:5px;margin-bottom: 5px;">
+        </div>
+		<div class="container p-3 my-3" style="background-color:  rgba(139, 228, 186, 0.808);">
+			<p style="text-align:center; margin-bottom:0px;padding-bottom:0px;" id="video"></p>
+		</div>
+
+	    <script>
+		    function myFunction(link) {
+			    document.getElementById("video").innerHTML = "<iframe style='width:100%; height:65%; border='no'; frameborder='no'; scrolling='yes'; allowfullscreen=allowfullscreen;' src='"+link+"'></iframe>";
+		    }
+	    </script>
+    </body>
+</html>
