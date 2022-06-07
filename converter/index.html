@@ -12,6 +12,8 @@
 		border:none;
 		margin:5px;
 		border-radius: 15px;
+		width:70%;
+		height:80px;
 	}
 	.container{
 		background-color: rgba(1, 10, 5, 0.98); 
@@ -50,6 +52,10 @@
 		.container{
 			min-width:95%;
 		}
+		iframe{
+			width:80%;
+			height:90px;
+		}
 	}
 	@media only screen and (max-width: 600px){
 		h3{
@@ -58,6 +64,10 @@
 		}
 		.container{
 			min-width:100%;
+		}
+		iframe{
+			width:90%;
+			height:100px;
 		}
 	}
 	</style>
@@ -82,7 +92,7 @@
 	<script>
 		function myFunction() {
 			var link = document.getElementById("flink").value;
-			document.getElementById("dem").innerHTML = "<iframe style='width:80%;height:90px;' src='https://loader.to/api/button/?url="+link+"&f=mp3'></iframe> <iframe style='width:80%;height:90px;' src='https://loader.to/api/button/?url="+link+"&f=360'></iframe><iframe style='width:80%;height:90px;' src='https://loader.to/api/button/?url="+link+"&f=480'></iframe><iframe style='width:80%;height:90px;' src='https://loader.to/api/button/?url="+link+"&f=720'></iframe><iframe style='width:80%;height:90px;' src='https://loader.to/api/button/?url="+link+"&f=1080'></iframe><iframe style='width:80%;height:90px;' src='https://loader.to/api/button/?url="+link+"&f=4k'></iframe>";
+			document.getElementById("dem").innerHTML = "<iframe src='https://loader.to/api/button/?url="+link+"&f=mp3'></iframe><iframe src='https://loader.to/api/button/?url="+link+"&f=360'></iframe><iframe src='https://loader.to/api/button/?url="+link+"&f=480'></iframe><iframe src='https://loader.to/api/button/?url="+link+"&f=720'></iframe><iframe src='https://loader.to/api/button/?url="+link+"&f=1080'></iframe><iframe src='https://loader.to/api/button/?url="+link+"&f=4k'></iframe>";
 		}
 	</script>
 </body>
