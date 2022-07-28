@@ -18,28 +18,38 @@
 				padding: 0px;
 				background-color: rgb(50, 50, 50);
 			}
-			.card{
-				margin: 10px;
-				min-height: 320px;
-				min-width: 300px;
-				background-size: cover;
-				color:white;
-				opacity: 0.9;
+			h1{ font-size: 60px; }
+			img{
+				height: 350px;
+                width: 600px;
 			}
-			.btn{
-				background-color: black;
+			img:hover{
+                filter: blur(1px);
+                -webkit-filter: blur(1px);
+            }
+			a{
+				text-align: center;
 				color:white;
-				padding: 15px;
-				border-radius: 18px;
-				min-width: 180px;
-				font-size: 17px;
 			}
 			a:hover{
-				background-color: white;
-				color:black;
-				box-shadow: 0 0 0 0.1rem black;
+                filter: grayscale(100%);
+                text-decoration: none;
+                color:black;
+            }
+			.con{
+				margin: 10px;
+				border: 5px solid rgb(20,20,20);
 			}
-			h1{ font-size: 60px; }
+			.row{
+				align-items: center;
+				justify-content: center;
+			}
+			p{
+				font-size: 30px;
+				background-color: gray;
+				padding: 5px;
+				margin: 0px;
+			}
 
 			@media only screen and (max-width: 1200px){
 				.container{ min-width:90%; }
@@ -51,36 +61,30 @@
 		  	<h1>Free Sport Streams</h1>      		
 	  	</div>
 		<div class="container-fluid p-3">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4">
-						<div class="card" style="background-image: url('slike/football.jpg');">
-							<div class="card-body">
-								<a href="https://pidokimen.github.io/football/" class="btn">Watch Football</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="card" style="background-image: url('slike/basketball.jpg');">
-							<div class="card-body">
-								<a href="https://pidokimen.github.io/basketball/" class="btn">Watch Basketball</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="card" style="background-image: url('slike/f1.webp');">
-							<div class="card-body">
-								<a href="https://pidokimen.github.io/f1/" class="btn">Watch Formula1</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="card" style="background-image: url('slike/motogp.jpg');">
-							<div class="card-body">
-								<a href="https://pidokimen.github.io/motogp/" class="btn">Watch MotoGP</a>
-							</div>
-						</div>
-					</div>
+			<div class="row">
+				<div class="con">
+					<a href="https://pidokimen.github.io/football/">
+						<img src="slike/football.jpg"/>
+						<p>Watch Football</p>
+					</a>
+				</div>
+				<div class="con">
+					<a href="https://pidokimen.github.io/basketball/">
+						<img src="slike/basketball.jpg"/>
+						<p>Watch Basketball</p>
+					</a>
+				</div>
+				<div class="con">
+					<a href="https://pidokimen.github.io/f1/">
+						<img src="slike/f1.webp"/>
+						<p>Watch Formula1</p>
+					</a>
+				</div>
+				<div class="con">
+					<a href="https://pidokimen.github.io/motogp/">
+						<img src="slike/motogp.jpg"/>
+						<p>Watch MotoGP</p>
+					</a>
 				</div>
 			</div>
 		</div>
