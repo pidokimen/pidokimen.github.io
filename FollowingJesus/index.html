@@ -81,8 +81,8 @@
             .song{ display: none; }
             .pre{ display: none; }
             .slika{
-                height: 180px;
-                width: 320px;
+                height: 216px;
+                width: 384px;
             }
             .slika:hover{
                 transform: scale(1.05);
@@ -122,6 +122,12 @@
             h1:hover{
                 transform: scale(1.02);
                 transition: 0.3s;
+            }
+            @media only screen and (max-width: 1200px){
+                .slika{
+                    height: 180px;
+                    width: 320px;
+                }
             }
         </style>
     </head>
