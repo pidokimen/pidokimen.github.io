@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domen_Grobin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="https://pidokimen.github.io/portfolio/slike/logo.png">
+    <!-- Box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Header Desingn -->
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+
+        <i class="bx bx-menu" id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Domov</a>
+            <a href="#about">O Meni</a>
+            <a href="#projects">Projekti</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+    </header>
+
+    <!-- Home section design -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Zdravo, ime mi je</h3>
+            <h1>Domen Grobin</h1>
+            <h3>Sem <span class="multiple-text"></span></h3>
+            <p>Po izobrazbi sem tehnik računalništva. Ukvarjam pa se z izdelovanjem spletnih strani. Zanima pa me tudi izdelava namiznih in mobilnih aplikacij.</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/domen.grobin" target="_blank"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.youtube.com/@never2late2" target="_blank"><i class="bx bxl-youtube"></i></a>
+                <a href="#" target="_blank"><i class="bx bxl-github"></i></a>
+                <a href="#" target="_blank"><i class="bx bxl-linkedin"></i></a>
+            </div>
+            <a href="cv/Domen_Grobin.pdf" class="btn" target="_blank">Moj Življenjepis</a>
+        </div>
+
+        <div class="home-img">
+            <img src="slike/home.png" alt="">
+        </div>
+    </section>
+
+    <!-- About section design -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="slike/about.png" alt="">
+        </div>
+
+        <div class="about-content">
+            <h2 class="heading">O <span>Meni</span></h2>
+            <p>Imam znanja računalništva, zanimajo me različne vrste tehnologij. Trenutno sem
+                osredotočen na izdelavo <span>spletnih strani</span>, iz spletnega programiranja imam znanja iz
+                programskih jezikov: HTML, CSS, JavaScript, php, SQL… Zanima pa me tudi
+                izdelava <span>namiznih aplikacij</span>, imam nekaj izkušenj in C# in C++. V prihodnosti bi rad
+                izdelal tudi kakšno uporabno mobilno aplikacijo v android studiju. Imam tudi
+                izkušnje z različnimi računalniškimi programi, kot so Office(Word, PowerPoint,
+                Excel), programi za zajemanje, obdelavo posnetkov: OBS in Shotcut, za grafično
+                oblikovanje slik: PAINT.net, GIMP. Zanima me tudi delo z bazami podatkov, ter
+                kakšna dela z vzdrževanjem računalniških sistemov. Pripravljen pa sem na
+                vsakodnevno učenje novih stvari.
+                </p>
+            <a href="#projects" class="btn">Projekti</a>
+        </div>
+    </section>
+
+    <!-- Projects section design -->
+    <section class="projects" id="projects">
+        <h2 class="heading"><span>Projekti</span></h2>
+
+        <div class="projects-container">
+            <div class="projects-box">
+                <h3>Music Downloader<h3>
+                <img src="slike/projekt1.JPG" alt="">
+                <p>Tehnologije: <span>HTML, CSS in JavaScript.</span></p>
+                <a href="https://pidokimen.github.io/converter/" target="_blank"><i class="bx bx-link-external"></i></a>
+            </div>
+            <div class="projects-box">
+                <h3>Recepti<h3>
+                <img src="slike/projekt2.JPG" alt="">
+                <p>Tehnologije: <span>HTML, CSS, JavaScript, php, SQL.</span></p>
+                <a href="https://najboljsirecepti.000webhostapp.com/" target="_blank"><i class="bx bx-link-external"></i></a>
+            </div>
+            <div class="projects-box">
+                <h3>Card Game<h3>
+                <img src="slike/projekt3.JPG" alt="">
+                <p>Tehnologije: <span>HTML, CSS, JavaScript, php, SQL.</span></p>
+                <a href="https://pidokimen.github.io/converter/" target="_blank"><i class="bx bx-link-external"></i></a>
+                <a href="https://pidokimen.github.io/converter/" target="_blank"><i class="bx bx-code-alt"></i></a>
+                <a href="https://pidokimen.github.io/converter/" target="_blank"><i class="bx bxl-youtube"></i></a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Contact section design -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Kontaktiraj <span>Me</span></h2>
+
+        <form action="https://formsubmit.co/grobindomen@gmail.com" method="POST">
+            <div class="input-box">
+                <input type="text" name="Ime" placeholder="Ime">
+                <input type="email" name="Gmail" placeholder="*Email">
+            </div>
+            <div class="input-box">
+                <input type="number" name="Telefon" placeholder="Telefon">
+                <input type="text" name="Zadeva" placeholder="*Zadeva" required>
+            </div>
+            <input type="hidden" name="_next" value="https://pidokimen.github.io/Portfolio/">
+            <textarea name="Sporočilo" cols="30" rows="10" placeholder="*Sporočilo" required></textarea>
+            <input type="submit" value="Pošlji Sporočilo" class="btn" required>
+        </form>
+    </section>
+
+    <!-- Scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Typed js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
