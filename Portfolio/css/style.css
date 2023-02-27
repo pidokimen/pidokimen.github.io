@@ -234,6 +234,11 @@ span{
 .projects-box i{
     font-size: 4rem;
     color: var(--text-color);
+    transition: 0.3s ease;
+}
+
+.projects-box i:hover{
+    color: var(--main-color);
 }
 
 .projects-box h3{
