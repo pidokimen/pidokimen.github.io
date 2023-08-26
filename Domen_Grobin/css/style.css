@@ -250,6 +250,8 @@ span{
     font-size: 1.5rem;
     margin: 1rem 0 2rem;
     font-weight: 600;
+    /* da so isto veliki height fixed če pride do težav odstrani */
+    height: 40px; 
 }
 
 .projects-box img{
