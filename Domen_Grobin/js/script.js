@@ -50,9 +50,9 @@ ScrollReveal().reveal('.home-content p, .about-content',{ origin: 'right' });
 
 /*======================= typed js =======================*/
 const typed = new Typed('.multiple-text',{
-    strings: ['Programer','Izdelovalec Spletnih Strani'],
-    typeSpeed: 100,
-    backSpeed: 100,
+    strings: ['Programer','Izdelovalec Spletnih Strani','Računalniški Serviser'],
+    typeSpeed: 80,
+    backSpeed: 80,
     backDelay: 1000,
     loop: true
 });
