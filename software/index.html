@@ -15,8 +15,24 @@
             outline: none;
             font-family: 'Poppins', sans-serif;
         }
+        html::-webkit-scrollbar{
+            width: 1rem;
+        }
+        html::-webkit-scrollbar-track{
+            background: rgb(20,20,20);
+        }
+
+        html::-webkit-scrollbar-thumb{
+            background: white;
+        }
+
         body{
-            background-color: rgba(50, 205, 50, 0.8);
+            background:
+                linear-gradient(to top left, lime, transparent),
+                linear-gradient(to top right, blue, transparent),
+                linear-gradient(rgba(255, 128, 0, 0.8), transparent);
+            background-blend-mode: screen;
+            /*background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );*/
             padding-bottom: 35px;
         }
         h1{
@@ -82,6 +98,18 @@
         }
         img{
             width: 70%;
+        }
+        /* -------------------- BREAKPOINTS -------------------- */
+        @media (max-width: 1000px){
+            .container{
+                margin: 2px auto;
+                border-radius: 0px;
+            }
+        }
+        @media (max-width: 600px){
+            html{
+                width: 600px;
+            }
         }
     </style>
 </head>
