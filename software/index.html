@@ -40,6 +40,12 @@
             margin: 30px auto;
             font-size: 60px;
             font-weight: 800;
+            animation: move 3s ease infinite;
+            margin-top: 40px;
+        }
+        @keyframes move {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
         }
         .container{
             display: flex;
@@ -112,12 +118,13 @@
             }
         }
     </style>
+    
 </head>
 <body>
     <h1>Software</h1>
     <div class="container">
         <span class="logo"><img src="https://obsproject.com/assets/images/new_icon_small-r.png"></img></span>
-        <span class="opis"><p><b>OBS Studio</b> free is a tool designed for display recording. It's also capable of live streaming.</p></span>
+        <span class="opis"><p><b>OBS Studio</b> is a free tool designed for display recording. It's also capable of live streaming.</p></span>
         <span class="prenesi"><a href="https://obsproject.com/" target="_blank">Download</a></span>
     </div>
     <div class="container">
