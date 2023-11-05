@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesus Saves</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/867/867958.png">
+    <script src="https://kit.fontawesome.com/f158d2c6d4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            border: none;
+            box-sizing: border-box;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root{
+            --one: black;
+            --two: white;
+            --three: rgb(136,8,8);
+            --four: gold;
+            --five: gray;
+        }
+
+        html::-webkit-scrollbar{ width: 0.8rem; }
+        html::-webkit-scrollbar-track{ background: var(--two); }
+        html::-webkit-scrollbar-thumb{ background: var(--one); }
+
+        /* ------------------------ Header ------------------------ */
+        header{
+            background-color: var(--three);
+            color: var(--one);
+            max-width: 1700px;
+            margin: 0px auto;
+            padding: 15px 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        header .logo{
+            background-color: var(--two);
+            color: var(--one);
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: 0.3s ease;
+        }
+        
+        header .logo:hover{
+            background-color: var(--four);
+            transform: scale(1.01);
+        }
+
+        header .logo img{
+            width: 50px;
+            height: 50px;
+            margin-right: 8px;
+        }
+
+        header #menu{
+            display: none;
+            transition: 0.3s ease;
+        }
+
+        header #menu:hover{
+            color: var(--four);
+        }
+
+        header nav a{
+            color: var(--two);
+            margin-left: 10px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        header nav a:hover{
+            color: var(--four);
+            font-size: 1.25rem;
+            margin-left: 5px;
+        }
+
+        /* ------------------------ Container ------------------------ */
+        .container{
+            background-color: var(--two);
+            color: var(--one);
+            max-width: 1700px;
+            margin: 0px auto;
+            text-align: center;
+            padding: 50px;
+            /*--Sticky Header--*/
+            scroll-margin-top: 99px;
+        }
+        .recolor{
+            background-color: var(--three);
+            color: var(--two);
+        }
+        .container h1{
+            font-size: 2.3rem;
+            font-weight: 700;
+        }
+        .container p{
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin: 10px 0px;
+        }
+
+        /* -------- Con -------- */
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px 0px;
+            padding-bottom: 0px;
+        }
+        .con{
+            background-color: var(--five);
+            margin: 10px;
+            transition: 0.3s ease;
+        }
+        .con .slika{
+            width: 384px;
+        }
+        .con p{
+            color: var(--one);
+            margin-top: -7px;
+            margin-bottom: 0px;
+            padding: 1px;
+        }
+        .recolor p{
+            color: var(--two);
+        }
+        .con:hover{
+            transform: scale(1.02);
+            background-color: var(--four);
+        }
+
+        /* ------------------------ Load More ------------------------ */
+        .tes{ display: none; }
+        .song{ display: none; }
+        .pre{ display: none; }
+        .load{
+            display: inline-block;
+            cursor: pointer;
+            padding: 7px 10px;
+            border: 3px solid var(--one);
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        .load:hover{
+            background-color: var(--one);
+            color:var(--two);
+            transition: 0.3s;
+            transform: scale(1.02);
+        }
+
+        /* -------- Link -------- */
+        .link{
+            font-size: 1.3rem; 
+            margin: 10px 5px;
+            color: var(--one); 
+        }
+
+        /* ------------------------ Top ------------------------ */
+        #top{
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            border-radius: 50%;
+            background-color: rgba(136, 8, 8, 0.7);
+            align-items: center;
+            text-align: center;
+            transition: 0.3s ease;
+            color:var(--two);
+        }
+        #top i{
+            margin-top: 15px;
+            font-size: 1.5rem;
+        }
+        #top:hover{
+            background-color: rgba(0, 0, 0, 0.7);
+            color:var(--four);
+        }
+
+        /* ------------------------ Sticky Header ------------------------ */
+        .sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 100%;
+            z-index:100;
+        }
+        .sticky + .container {
+            margin-top: 99px;
+        }
+
+        /* ------------------------ Breakpoints ------------------------ */
+        @media (max-width: 1100px){
+            header{
+                display: block;
+                align-items: center;
+                padding: 15px 35px;
+            }
+            header .logo{
+                display: inline-flex;
+            }
+            header #menu{
+                display: inline;
+                float: right;
+                font-size: 2rem;
+                color: var(--two);
+                margin-top: 20px;
+            }
+            header nav a{
+                display: none;
+            }
+            .navbar.active{
+                margin-top: 20px;
+                border-top: 4px solid var(--one);
+            }
+            .navbar.active a{
+                display: block;
+                margin: 0px;
+                margin: 10px;
+                border-bottom: 2px dashed var(--two);
+            }
+            header nav a:hover{
+                font-size: 1.2rem;
+                padding-left: 10px;
+            }
+            .con .slika{
+                width: 320px;
+            }
+            .container{
+                padding: 50px 20px;
+            }
+            .con p{
+                font-size: 0.9rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!--------------------------------- Header --------------------------------->
+    <header id="header">
+        <a href="#" class="logo" onclick="remove()"> <img src="https://cdn-icons-png.flaticon.com/512/867/867958.png"></img> <i>Jesus Saves</i> </a>
+        <i class="fa-solid fa-bars" id="menu"></i>
+        <nav class="navbar">
+            <a href="#testimony" onclick="remove()">Testimony</a>
+            <a href="#music" onclick="remove()">Music</a>
+            <a href="#teaching" onclick="remove()">Teaching</a>
+            <a href="#entertainment" onclick="remove()">Entertainment</a>
+            <a href="#deliverance" onclick="remove()">Deliverance</a>
+            <a href="#visit" onclick="remove()">Visit</a>
+        </nav>
+    </header>
+
+    <!--------------------------------- Containers --------------------------------->
+
+    <!--------- Testimony --------->
+    <div class="container" id="testimony">
+        <h1>Testimony</h1>
+        <p>Here you can find a list various people, testifying how Jesus changed the direction of their lives.</p>
+        <div class="row">
+            <div class="con tes">
+                <a href="https://www.youtube.com/watch?v=TvBct2uWT1U" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/krZLr00Xalg/maxresdefault.jpg"/>
+                    <p>Isaiah Saldivar</p>
+                </a>
+            </div>
+            <div class="con tes">
+                <a href="https://www.youtube.com/watch?v=tAoGlU7Uy-w" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/BtFha0mq_Gs/maxresdefault.jpg"/>
+                    <p>John Ramirez</p>
+                </a>
+            </div>
+            <div class="con tes">
+                <a href="https://www.youtube.com/watch?v=tNLUB7Cnxm0" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/hfMbWuKDLuA/maxresdefault.jpg"/>
+                    <p>Troy Black</p>
+                </a>
+            </div>
+            <div class="con tes">
+                <a href="https://www.youtube.com/watch?v=BNSau4jwbKI" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/BNSau4jwbKI/maxresdefault.jpg"/>
+                    <p>James Jennings</p>
+                </a>
+            </div>
+            <div class="con tes">
+                <a href="https://www.youtube.com/watch?v=QjAOMrq4rTU" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/KCRVv-mEaaE/maxresdefault.jpg"/>
+                    <p>Gideon Mulenga</p>
+                </a>
+            </div>
+            <div class="con tes">
+                <a href="https://www.youtube.com/watch?v=fN6HbnA1QGI" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/fN6HbnA1QGI/maxresdefault.jpg"/>
+                    <p>Jessica Laureano</p>
+                </a>
+            </div>
+            <div class="con tes">
+                <a href="https://www.youtube.com/watch?v=mtjMANw2hCA" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/mtjMANw2hCA/maxresdefault.jpg"/>
+                    <p>I murdered him for Allah but...</p>
+                </a>
+            </div>
+            <div class="con tes">
+                <a href="https://www.youtube.com/watch?v=FAsCMaqSrmY" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/FAsCMaqSrmY/maxresdefault.jpg"/>
+                    <p>Ide Viriya</p>
+                </a>
+            </div>
+            <div class="con tes">
+                <a href="https://www.youtube.com/watch?v=KCi4jXDiSrg" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/KCi4jXDiSrg/maxresdefault.jpg"/>
+                    <p>Hannah Adeoye</p>
+                </a>
+            </div>
+            <div class="con tes">
+                <a href="https://www.youtube.com/watch?v=O_-PwXPCOCM" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/O_-PwXPCOCM/maxresdefault.jpg"/>
+                    <p>Everett Roeth</p>
+                </a>
+            </div>
+            <div class="con tes">
+                <a href="https://www.youtube.com/watch?v=HbisJkhDetc" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/81Fqi8gbS30/maxresdefault.jpg"/>
+                    <p>Dr. Rajkumar Ramchandran</p>
+                </a>
+            </div>
+            <div class="con tes">
+                <a href="https://www.youtube.com/watch?v=8aEHUJN8WyA" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/8aEHUJN8WyA/maxresdefault.jpg"/>
+                    <p>Rahil Patel</p>
+                </a>
+            </div>
+        </div>
+        <div class="load" id="load-tes"> Show More </div>
+    </div>
+
+    <!--------- Music --------->
+    <div class="container recolor" id="music">
+        <h1>Music</h1>
+        <p>Difficult to find pure, meaningful music? Search no more, here you can find old and modern christian music.</p>
+        <div class="row">
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=P1fnL-avUAc" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/P1fnL-avUAc/maxresdefault.jpg"/>
+                    <p>Phil Wickham - 100%</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=1lQedCA1zJY" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/1lQedCA1zJY/maxresdefault.jpg"/>
+                    <p>Jermaine Edwards - Beautiful Day</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=V39qPqyyB2A" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/V39qPqyyB2A/maxresdefault.jpg"/>
+                    <p>Brandon Lake - Praise You Anywhere</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=dMM4mDsSDIQ" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/dMM4mDsSDIQ/maxresdefault.jpg"/>
+                    <p>Jaron - Dirty Laundry</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=5AbFPU__dTU" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/5AbFPU__dTU/maxresdefault.jpg"/>
+                    <p>Anendlessocean - Wildfire</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=mVRLuuflWnk" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/KVVYUC2iuaI/maxresdefault.jpg"/>
+                    <p>Pompi - Mizu</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=fFI5BzMzm1A" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/fFI5BzMzm1A/maxresdefault.jpg"/>
+                    <p>Christopher Gayle - Jesus Fight My Battles</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=qbndsJR455s" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/qbndsJR455s/maxresdefault.jpg"/>
+                    <p>Touch Not My Anointed - Bj'orn Pierre</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=29b1CskOi4o" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/29b1CskOi4o/maxresdefault.jpg"/>
+                    <p>Dweeno | Sin wont make me Better</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=CmkcUUQgSvk" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/CmkcUUQgSvk/maxresdefault.jpg"/>
+                    <p>Christopher Gayle - God Alone</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=FC47sIQFo9I" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/FC47sIQFo9I/maxresdefault.jpg"/>
+                    <p>Jermaine Edwards - Make A Way</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=IPCid2aQAno" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/IPCid2aQAno/maxresdefault.jpg"/>
+                    <p>Limoblaze - Gold ft. Ada Ehi</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=rHGD2ye1ATY" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/rHGD2ye1ATY/maxresdefault.jpg"/>
+                    <p>Jermaine Edwards - Don't Count Me Out</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=9moQWBQDgaE" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/9moQWBQDgaE/maxresdefault.jpg"/>
+                    <p>Last Time I Checked | Samuel Medas</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=C_rjNGjckUc" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/C_rjNGjckUc/maxresdefault.jpg"/>
+                    <p>Limoblaze, Lecrae, Happi - Jireh</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=UKN3mcCU4hM" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/VbMNqWUfgfk/maxresdefault.jpg"/>
+                    <p>DJ Nicholas - Living 4 Jesus</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=ApGSCxFKk5k" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/ApGSCxFKk5k/maxresdefault.jpg"/>
+                    <p>Kevin Downswell - You Make Me Stronger</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=GKtIGzKPVaM" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/GKtIGzKPVaM/maxresdefault.jpg"/>
+                    <p>Jason Mighty - Can't Walk This Life Alone</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=M8uV340HjYw" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/M8uV340HjYw/maxresdefault.jpg"/>
+                    <p>Christopher Gayle - Only You</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=7PfVaQlSDwE" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/A1QvVFq8Vd8/maxresdefault.jpg"/>
+                    <p>Christopher Gayle Ft.Dweeno - The Wall</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=QDS0aD-NOJY" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/QDS0aD-NOJY/maxresdefault.jpg"/>
+                    <p>Jermaine Edwards - No Weapon</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=1dBO7-JOusk" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/1dBO7-JOusk/maxresdefault.jpg"/>
+                    <p>Christopher Gayle - My Everything</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=2dVqPtpXkpI" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/2dVqPtpXkpI/maxresdefault.jpg"/>
+                    <p>Christopher Gayle, IWP - Hold On</p>
+                </a>
+            </div>
+            <div class="con song">
+                <a href="https://www.youtube.com/watch?v=TfpiHv1kP5E" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/TfpiHv1kP5E/maxresdefault.jpg"/>
+                    <p>Lord You're Holy Ballin</p>
+                </a>
+            </div>
+        </div>
+        <div class="load" id="load-song"> Show More </div>  
+    </div>
+
+    <!--------- Teaching --------->
+    <div class="container" id="teaching">
+        <h1>Teaching</h1>
+        <p>Do you truly understand what Jesus taught, understand the character of God throught his words.</p>
+        <div class="row">
+            <div class="con pre">
+                <a href="https://www.youtube.com/watch?v=lYNxyohubUU" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/DIWnZDGZsVg/maxresdefault.jpg"/>
+                    <p>Yoga</p>
+                </a>
+            </div>
+            <div class="con pre">
+                <a href="https://www.youtube.com/watch?v=LaIH2Db1zGM" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/LaIH2Db1zGM/maxresdefault.jpg"/>
+                    <p>Psychics</p>
+                </a>
+            </div>
+            <div class="con pre">
+                <a href="https://www.youtube.com/watch?v=ZnW9Hbm4Ytc" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/ZnW9Hbm4Ytc/maxresdefault.jpg"/>
+                    <p>Halloween</p>
+                </a>
+            </div>
+            <div class="con pre">
+                <a href="https://www.youtube.com/watch?v=q-fER8Prxjc" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/q-fER8Prxjc/maxresdefault.jpg"/>
+                    <p>Modern Day Sorcery</p>
+                </a>
+            </div>
+            <div class="con pre">
+                <a href="https://www.youtube.com/watch?v=biNI7hvOVto" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/biNI7hvOVto/maxresdefault.jpg"/>
+                    <p>Holy Spirit</p>
+                </a>
+            </div>
+            <div class="con pre">
+                <a href="https://www.youtube.com/watch?v=KUTcgg_kcOU" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/KUTcgg_kcOU/maxresdefault.jpg"/>
+                    <p>Alcohol</p>
+                </a>
+            </div>
+            <div class="con pre">
+                <a href="https://www.youtube.com/watch?v=EkVHzOmTt1M" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/EkVHzOmTt1M/maxresdefault.jpg"/>
+                    <p>Reading Bible</p>
+                </a>
+            </div>
+            <div class="con pre">
+                <a href="https://www.youtube.com/watch?v=JdAMd64AdoQ" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/JdAMd64AdoQ/maxresdefault.jpg"/>
+                    <p>Homosexuality</p>
+                </a>
+            </div>
+            <div class="con pre">
+                <a href="https://www.youtube.com/watch?v=8Y0Z_rG3OxE" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/8Y0Z_rG3OxE/maxresdefault.jpg"/>
+                    <p>Sin and Temptation</p>
+                </a>
+            </div>
+            <div class="con pre">
+                <a href="https://www.youtube.com/watch?v=bnkuhuiGgGM" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/TkQdf7-Sd_A/maxresdefault.jpg"/>
+                    <p>Crystals</p>
+                </a>
+            </div>
+            <div class="con pre">
+                <a href="https://www.youtube.com/watch?v=VYLOiUxJg-Q" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/VYLOiUxJg-Q/maxresdefault.jpg"/>
+                    <p>Porn</p>
+                </a>
+            </div>
+            <div class="con pre">
+                <a href="https://www.youtube.com/watch?v=fhRi-3Txt3M" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/fhRi-3Txt3M/maxresdefault.jpg"/>
+                    <p>Vaccine</p>
+                </a>
+            </div>
+        </div>
+        <div class="load" id="load-pre"> Show More </div>
+    </div>
+
+    <!--------- Entertainment --------->
+    <div class="container recolor" id="entertainment">
+        <h1>Entertainment</h1>
+        <p>Here you can find some tv-shows and movies.</p>
+        <div class="row">
+            <div class="con">
+                <a href="https://www.youtube.com/watch?v=K1-FoFj8Jbo" target="_blank">
+                    <img class="slika" src="https://resizing.flixster.com/owdi6n_rBuO7ckzG7DMeeSpoaCM=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRSVFRWMjczMjgud2VicA=="/>
+                    <p>The Chosen</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--------- Deliverance --------->
+    <div class="container" id="deliverance">
+        <h1>Deliverance</h1>
+        <p>Here you can see miracles, healings and dominion over evil spirits. So you know God hasn't stopped performing wonders.</p>
+        <div class="row">
+            <div class="con">
+                <a href="https://www.youtube.com/watch?v=NnPyqGW2w2Y" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/NnPyqGW2w2Y/maxresdefault.jpg"/>
+                    <p>Freed From Baal</p>
+                </a>
+            </div>
+            <div class="con">
+                <a href="https://www.youtube.com/watch?v=loiGtOlSzjE" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/loiGtOlSzjE/maxresdefault.jpg"/>
+                    <p>What You Don't Know About Illuminati Ring</p>
+                </a>
+            </div>
+            <div class="con">
+                <a href="https://www.youtube.com/watch?v=oFLRegRdSmc" target="_blank">
+                    <img class="slika" src="https://i.ytimg.com/vi/oFLRegRdSmc/maxresdefault.jpg"/>
+                    <p>Demon Attacks TB Joshua... And Fails!!!</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--------- Visit --------->
+    <div class="container recolor" id="visit">
+        <h1>Visit</h1>             
+        <a href="https://www.bible.com/bible/111/GEN.1.NIV" class="link load" target="_blank">Bible</a>       
+        <a href="https://www.openbible.info/topics/" class="link load" target="_blank">openbible</a>
+    </div>
+
+
+
+
+    <!--------------------------------- Top --------------------------------->
+    <a href="#" id="top"><i class="fa-solid fa-arrow-up"></i></a>
+
+
+    <!--------------------------------- Script --------------------------------->
+    <script>
+
+        /*---------------------- Sticky Header ----------------------*/
+		window.onscroll = function() {stick()};
+
+        var header = document.getElementById("header");
+        var sticky = header.offsetTop;
+
+        function stick() {
+            if (window.pageYOffset >= sticky) header.classList.add("sticky")
+            else header.classList.remove("sticky");
+        }
+
+        /*---------------------- Menu ----------------------*/
+        let menu = document.querySelector('#menu');
+        let navbar = document.querySelector('.navbar');
+
+        //Show links
+        menu.onclick = () => {
+            menu.classList.toggle('fa-xmark');
+            navbar.classList.toggle('active');
+        };
+
+        //Hide links
+        function remove(){
+            menu.classList.remove('fa-xmark');
+            navbar.classList.remove('active');
+        };
+
+
+        /*---------------------- Scroll to Top ----------------------*/
+        $(window).scroll(function() {
+            if ($(this).scrollTop() >= 50) $('#top').fadeIn(400);    
+            else $('#top').fadeOut(400);   
+        });
+
+        //Testimony Load
+        let testimony = [...document.querySelectorAll('.tes')];
+        testimony[0].style.display = 'inline-block';
+        testimony[1].style.display = 'inline-block';
+        testimony[2].style.display = 'inline-block';
+        testimony[3].style.display = 'inline-block';
+        testimony[4].style.display = 'inline-block';
+        testimony[5].style.display = 'inline-block';
+
+        let loadTes = document.querySelector('#load-tes');
+        let currentItem = 6;
+
+        loadTes.onclick = () =>{
+            let boxes = [...document.querySelectorAll('.tes')];
+            for(var i = currentItem; i < currentItem + 3; i++){
+                boxes[i].style.display = 'inline-block';
+            }
+            currentItem = currentItem + 3;
+            if(currentItem>=boxes.length){
+                loadTes.style.display = 'none';
+            }
+        }
+
+        //Song Load
+        let song = [...document.querySelectorAll('.song')];
+        song[0].style.display = 'inline-block';
+        song[1].style.display = 'inline-block';
+        song[2].style.display = 'inline-block';
+        song[3].style.display = 'inline-block';
+        song[4].style.display = 'inline-block';
+        song[5].style.display = 'inline-block';
+
+        let loadSong = document.querySelector('#load-song');
+        let currentItems = 6;
+
+        loadSong.onclick = () =>{
+            let boxes = [...document.querySelectorAll('.song')];
+            for(var i = currentItems; i < currentItems + 3; i++){
+                boxes[i].style.display = 'inline-block';
+            }
+            currentItems = currentItems + 3;
+            if(currentItems>=boxes.length){
+                loadSong.style.display = 'none';
+            }
+        }
+
+        //Teaching Load
+        let preach = [...document.querySelectorAll('.pre')];
+        preach[0].style.display = 'inline-block';
+        preach[1].style.display = 'inline-block';
+        preach[2].style.display = 'inline-block';
+        preach[3].style.display = 'inline-block';
+        preach[4].style.display = 'inline-block';
+        preach[5].style.display = 'inline-block';
+
+        let loadPre = document.querySelector('#load-pre');
+        let Items = 6;
+
+        loadPre.onclick = () =>{
+            let boxes = [...document.querySelectorAll('.pre')];
+            for(var i = Items; i < Items + 3; i++){
+                boxes[i].style.display = 'inline-block';
+            }
+            Items = Items + 3;
+            if(Items>=boxes.length){
+                loadPre.style.display = 'none';
+            }
+        }
+
+    </script>
+
+</body>
+</html>
