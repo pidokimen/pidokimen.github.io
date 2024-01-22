@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Converter">
+    <meta name="keywords" content="converter, convert">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5343/5343570.png">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+      *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          text-decoration: none;
+          border: none;
+          outline: none;
+          scroll-behavior: smooth;
+          font-family: 'Poppins', sans-serif;
+          text-align: center;
+      }
+
+      body{
+        background-color: rgb(220,220,220);
+      }
+
+      .container{
+        background-color: gold;
+        padding-bottom: 30px;
+        max-width: 500px;
+        border-radius: 20px;
+        margin: 0 auto;
+        margin-top: 30px;
+      }
+
+      h1{
+        padding: 30px;
+        font-size: 3rem;
+        color: black;
+      }
+
+      select{
+        background-color: rgb(220,220,220);
+        color: black;
+        padding: 12px;
+        padding-left: 20px;
+        padding-right: 70px;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      option{
+        text-align: left;
+      }
+
+      button{
+        font-size: 1rem;
+        background-color: black;
+        color: rgb(220,220,220);
+        font-weight: 600;
+        padding: 12px 20px;
+        transition: 0.3s ease;
+        cursor: pointer;
+      }
+
+      button:hover{
+        background-color: rgb(180,180,180);
+        color: black;
+      }
+
+      ::placeholder {
+        color: black;
+      }
+
+      input{
+        margin-top: 15px;
+        background-color: rgb(220,220,220);
+        color: black;
+        padding: 14px 5px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 15px;
+      }
+
+      #st1{
+        margin-top: 30px;
+      }
+
+      #st2{
+        background-color: cyan;
+      }
+
+      @media (max-width: 500px){
+        .container{
+          margin-top: 0px;
+          border-radius: 0px;
+          display: block;
+        }
+      }
+
+      @media (max-width: 380px){
+        button{
+          margin-top: 15px;
+        }
+      }
+
+      @media (max-width: 320px){
+        h1{
+          padding: 30px 10px;
+          font-size: 2rem;
+        }
+        select{
+          padding: 12px;
+          padding-left: 10px;
+          padding-right: 30px;
+        }
+      }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+      <h1>Converter</h1>
+      <select id="options">
+          <option value="1" disabled selected>Choose Conversion</option>
+          <option value="2.2046226218488">kg to pounds</option>
+          <option value="0.45359237">pounds to kg</option>
+          <option value="0.39370078740157">cm to inch</option>
+          <option value="2.54">inch to cm</option>
+          <option value="0.032808399">cm to feet</option>
+          <option value="30.48">feet to cm</option>
+      </select>
+      <button id="convert" onclick="izracun()">Convert</button>
+      <br>
+      <input type="number" id="st1" step='0.00001' placeholder="Type value"/>
+      <br>
+      <input type="number" id="st2" step='0.00001' placeholder="Result" readonly/>
+    </div>
+
+    <script>
+        function izracun() {
+          var pretvorba = document.getElementById("options").value;
+          var st1 = document.getElementById("st1").value;
+          var result = parseFloat((st1 * pretvorba).toFixed(5));
+          document.getElementById("st2").value = result;
+        }
+
+        //Enter
+        var input = document.getElementById("st1");
+        input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("convert").click();
+                //Zapre tipkovnico na telefonu
+                document.activeElement.blur();
+            }
+        });
+    </script>
+
+</body>
+</html>
