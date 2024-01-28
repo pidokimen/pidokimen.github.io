@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5064/5064043.png">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: sans-serif;
+        }
+
+        body{
+            background-color: rgb(50,50,50);
+        }
+
+        .container{
+            background-color: #90EE90;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        h1{
+            text-align: center;
+            font-weight: 800;
+            font-size: 3.5rem;
+            padding: 20px;
+            color: rgb(20,20,20);
+        }
+
+        .inputs{
+            display: flex;
+            margin: 10px;
+            border: 3px solid rgb(20,20,20);
+        }
+
+        .inputs #text{
+            width: 75%;
+            background-color: rgb(20,20,20);
+            color: white;
+        }
+
+        input{
+            padding: 10px;
+            font-weight: 500;
+            font-size: 1.3rem;
+        }
+
+        .inputs #result{
+            width: 25%;
+            background-color: #FF4433;
+            color: rgb(20,20,20);
+        }
+
+        .buttons{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            justify-content: center;
+        }
+
+        button{
+            background-color: rgb(20,20,20);
+            color: white; 
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            font-weight: 500;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        #izracun{
+            background-color: #FF4433;
+            color: rgb(20,20,20);
+        }
+
+        @media (max-width: 800px){
+            .container{
+                margin-top: 0px;
+                border-radius: 0px;
+            }
+        }
+        @media (max-width: 450px){
+            h1{
+                font-size: 3rem;
+                padding: 15px 0px;
+            }
+        }
+        @media (max-width: 350px){
+            h1{
+                font-size: 2.5rem;
+            }
+        }
+        @media (max-width: 300px){
+            h1{
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculator</h1>
+        <div class="inputs">
+            <input type="text" id="text">
+            <input type="result" id="result" readonly>
+        </div>
+        <div class="buttons">
+            <button onclick="dodaj(0)">0</button>
+            <button onclick="dodaj(1)">1</button>
+            <button onclick="dodaj(2)">2</button>
+            <button onclick="dodaj(3)">3</button>
+            <button onclick="dodaj(4)">4</button>
+            <button onclick="dodaj(5)">5</button>
+            <button onclick="dodaj(6)">6</button>
+            <button onclick="dodaj(7)">7</button>
+            <button onclick="dodaj(8)">8</button>
+            <button onclick="dodaj(9)">9</button>
+            <button onclick="dodaj('+')">+</button>
+            <button onclick="dodaj('-')">-</button>
+            <button onclick="dodaj('/')">/</button>
+            <button onclick="dodaj('*')">*</button>
+            <button onclick="dodaj('Math.sqrt(1)')">√</button>
+            <button onclick="dodaj('Math.pow(a,b)')">a<sup>b</sup></button>
+            <button onclick="dodaj('((a)/(b))')"><sup>a</sup>&frasl;<sub>b</sub></button>
+            <button onclick="dodaj('Math.PI')">π</button>
+            <button onclick="dodaj('oklepaj')">(</button>
+            <button onclick="dodaj('zaklepaj')">)</button>
+            <button onclick="dodaj('clear')">C</button>
+            <button id="izracun" onclick="izracun()">=</button>
+        </div>
+    </div>
+
+    <script>
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        const st = "";
+        function dodaj(st) {
+            var input = document.getElementById("text").value;
+            if(st == "oklepaj") st = "(";
+            if(st == "zaklepaj") st = ")";
+            document.getElementById("text").value = input + st;
+            if(st == "clear"){ 
+                document.getElementById("text").value = "";
+                document.getElementById("result").value = "";
+            }
+            //Desktop
+            if(!isMobile) {
+                document.getElementById("text").focus();
+            }
+        }
+
+        function izracun(){
+            var input = document.getElementById("text").value;
+            input = new Function('return ' + input)();
+            if(input == undefined) input = "error";
+            document.getElementById("result").value = input;
+        }
+
+        //Enter
+        document.getElementById("text")
+            .addEventListener("keyup", function(event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                document.getElementById("izracun").click();
+                document.activeElement.blur();
+            }
+        });
+
+        //Desktop
+        if(!isMobile) {
+            var style = document.createElement('style');
+            style.innerHTML = `
+                button:hover{
+                    background-color: white;
+                    color: rgb(20,20,20); 
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+    </script>
+</body>
+</html>
